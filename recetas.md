@@ -7,9 +7,9 @@ Con estos pasos reducimos 1GB de Memoria RAM, tomado de este [enlace](https://ww
 
 * Remover ubuntu-desktop
     
-    sudo apt remove --purge ubuntu-desktop
+            sudo apt remove --purge ubuntu-desktop
 
-* Instalar lxdm display manager. Puede aparecer un dialogo para seleccionar el display manager. Seleccione `lxdm`
+* Instalar lxdm display manager. Puede aparecer un dialogo para seleccionar el display manager, Seleccione **lxdm**
 
             sudo apt install lxdm
 
@@ -49,4 +49,20 @@ En algunos casos al activar la cámara del vehiculo esta puede aparecer al revé
             cd ~/jetbot
             sudo python3 setup.py install
 
+
+## 3. Conectar la JetBot a WiFi
+
+* Conecte la JetBot al router usando un cable de Ethernet, y conecta su PC a la misma Red/Router
+
+* Ingrese por SSH a la JetBot usando la Ip mostrada en la PioLed, ej (192.168.1.3)
+
+            ssh jetbot@192.168.1.3
+
+* En la terminal, use el siguiente comando para listar las redes WiFi disponibles.
+
+            sudo nmcli device wifi list
+
+* Conectese a la red WiFi 
+
+            sudo nmcli device wifi connect <ssid_name> password <password>
 
